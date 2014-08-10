@@ -14,6 +14,6 @@
 
  house <- read.table("household_power_consumption.txt", sep = ";", nrows = 2880, skip = 66637)
  house$Date <- strptime(paste(house$V1,house$V2), "%d/%m/%Y %H:%M:%S")
- with(house, plot(house$Date, house$V3, pch = "|", xlab ="", ylab = "Global Active Power (kilowatts)"))
+ with(house, plot(house$Date, house$V3, pch = "|", xlab ="", ylab = "Global Active Power (kilowatts)", type = "l"))
  dev.copy(png, file = "plot2.png")
  dev.off()
